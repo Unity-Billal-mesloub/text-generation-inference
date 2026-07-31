@@ -1,7 +1,7 @@
 > [!CAUTION]
 > text-generation-inference is now in maintenance mode. Going forward, we will accept pull requests for minor bug fixes, documentation improvements and lightweight maintenance tasks.
 >
-> TGI has initiated the movement for optimized inference engines to rely on a `transformers` model architectures. This approach is now adopted by downstream inference engines, which we contribute to and recommend using going forward: [vllm](https://github.com/vllm-project/vllm), [SGLang](https://github.com/sgl-project/sglang), as well as local engines with inter-compatibility such as llama.cpp or MLX.
+> TGI has initiated the movement for optimized inference engines to rely on a `transformers` model architectures. This approach is now adopted by downstream inference engines, which we contribute to and recommend using going forward: [vllm](https://github.com/vllm-project/vllm), as well as local engines with inter-compatibility such as llama.cpp or MLX.
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 
 # Text Generation Inference
 
-<a href="https://github.com/huggingface/text-generation-inference">
+<a href="https://github.com/Unity-Billal-mesloub/text-generation-inference">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/huggingface/text-generation-inference?style=social">
 </a>
 <a href="https://huggingface.github.io/text-generation-inference">
@@ -49,15 +49,10 @@ Text Generation Inference (TGI) is a toolkit for deploying and serving Large Lan
 - Token streaming using Server-Sent Events (SSE)
 - Continuous batching of incoming requests for increased total throughput
 - [Messages API](https://huggingface.co/docs/text-generation-inference/en/messages_api) compatible with Open AI Chat Completion API
-- Optimized transformers code for inference using [Flash Attention](https://github.com/HazyResearch/flash-attention) and [Paged Attention](https://github.com/vllm-project/vllm) on the most popular architectures
+- Optimized transformers code for inference using [Flash Attention](https://github.com/Unity-Educational-Formation/flash-attention) and [Paged Attention](https://github.com/Unity-Educational-Formation/vllm) on the most popular architectures
 - Quantization with :
-  - [bitsandbytes](https://github.com/TimDettmers/bitsandbytes)
   - [GPT-Q](https://arxiv.org/abs/2210.17323)
-  - [EETQ](https://github.com/NetEase-FuXi/EETQ)
-  - [AWQ](https://github.com/casper-hansen/AutoAWQ)
-  - [Marlin](https://github.com/IST-DASLab/marlin)
   - [fp8](https://developer.nvidia.com/blog/nvidia-arm-and-intel-publish-fp8-specification-for-standardization-as-an-interchange-format-for-ai/)
-- [Safetensors](https://github.com/huggingface/safetensors) weight loading
 - Watermarking with [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)
 - Logits warper (temperature scaling, top-p, top-k, repetition penalty, more details see [transformers.LogitsProcessor](https://huggingface.co/docs/transformers/internal/generation_utils#transformers.LogitsProcessor))
 - Stop sequences
@@ -66,16 +61,6 @@ Text Generation Inference (TGI) is a toolkit for deploying and serving Large Lan
 - [Guidance/JSON](https://huggingface.co/docs/text-generation-inference/conceptual/guidance). Specify output format to speed up inference and make sure the output is valid according to some specs..
 - Custom Prompt Generation: Easily generate text by providing custom prompts to guide the model's output
 - Fine-tuning Support: Utilize fine-tuned models for specific tasks to achieve higher accuracy and performance
-
-### Hardware support
-
-- [Nvidia](https://github.com/huggingface/text-generation-inference/pkgs/container/text-generation-inference)
-- [AMD](https://github.com/huggingface/text-generation-inference/pkgs/container/text-generation-inference) (-rocm)
-- [Inferentia](https://github.com/huggingface/optimum-neuron/tree/main/text-generation-inference)
-- [Intel GPU](https://github.com/huggingface/text-generation-inference/pull/1475)
-- [Gaudi](https://github.com/huggingface/tgi-gaudi)
-- [Google TPU](https://huggingface.co/docs/optimum-tpu/howto/serving)
-
 
 ## Get Started
 
@@ -128,7 +113,7 @@ curl localhost:8080/v1/chat/completions \
 
 **Note:** TGI supports AMD Instinct MI210 and MI250 GPUs. Details can be found in the [Supported Hardware documentation](https://huggingface.co/docs/text-generation-inference/installation_amd#using-tgi-with-amd-gpus). To use AMD GPUs, please use `docker run --device /dev/kfd --device /dev/dri --shm-size 1g -p 8080:80 -v $volume:/data ghcr.io/huggingface/text-generation-inference:3.3.5-rocm --model-id $model` instead of the command above.
 
-To see all options to serve your models (in the [code](https://github.com/huggingface/text-generation-inference/blob/main/launcher/src/main.rs) or in the cli):
+To see all options to serve your models (in the [code](https://github.com/Unity-Billal-mesloub/text-generation-inference/blob/main/launcher/src/main.rs) or in the cli):
 ```
 text-generation-launcher --help
 ```
@@ -205,7 +190,7 @@ You can also opt to install `text-generation-inference` locally.
 First clone the repository and change directory into it:
 
 ```shell
-git clone https://github.com/huggingface/text-generation-inference
+git clone https://github.com/Unity-Billal-mesloub/text-generation-inference
 cd text-generation-inference
 ```
 
